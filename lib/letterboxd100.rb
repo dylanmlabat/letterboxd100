@@ -1,6 +1,2 @@
-require "letterboxd100/version"
-
-module Letterboxd100
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative "letterboxd100/version"
+require_relative "letterboxd100/cli"

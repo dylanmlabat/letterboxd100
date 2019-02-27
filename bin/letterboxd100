@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require "./lib/letterboxd100"
+
+Letterboxd100::CLI.new.call
