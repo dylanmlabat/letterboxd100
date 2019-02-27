@@ -1,8 +1,6 @@
 # Letterboxd100
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/letterboxd100`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem pulls the top 100 films of Letterboxd.com by average user rating, and allows users to view that list in sets of 10. Users are able to select films within those sets in order to see additional data about the selected film (director, year of release, a brief synopsis of the film, and user rating).
 
 ## Installation
 
