@@ -1,7 +1,4 @@
 #!/usr/bin/env ruby
-require "pry"
-require "nokogiri"
-require "open-uri"
 
 require "./lib/letterboxd100"
 
