@@ -7,6 +7,5 @@ class Letterboxd100::CLI
     puts "Welcome to Letterboxd's Top 100 Films"
     puts "Enter the film rankings that you would like to view:"
     puts "1-10, 11-20, 21-30, 31-40, 41-50, 51-60, 61-70, 71-80, 81-90, 91-100"
-    @films = Letterboxd100::Film.current
   end
 end

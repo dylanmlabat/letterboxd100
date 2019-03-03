@@ -1,13 +1,11 @@
 class Letterboxd100::Film
-  attr_accessor :name, :director, :year, :rating
+  attr_accessor :title, :position, :url, :director, :year, :rating, :synopsis
+  @@all = []
   
-  def self.current
-    film1 = self.new
-    film1.name = "The Godfather"
-    film1.director = "Francis Ford Coppola"
-    film1.year = "1972"
-    film1.rating = "4.55"
-    
-    [film1]
+  def initialize(name = nil, position = nil, url = nil)
+    @name = name
+    @position = position
+    @url = url
+    @@all << self
   end
 end
