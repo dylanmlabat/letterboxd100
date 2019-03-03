@@ -8,4 +8,8 @@ class Letterboxd100::Film
     @url = url
     @@all << self
   end
+  
+  def self.all
+    @@all
+  end
 end

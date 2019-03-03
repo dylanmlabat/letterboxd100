@@ -1,6 +1,7 @@
 class Letterboxd100::CLI
   def call
     list_welcome
+    Letterboxd100::Scraper.new.list_index
   end
   
   def list_welcome
