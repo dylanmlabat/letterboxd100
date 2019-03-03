@@ -4,6 +4,12 @@ class Letterboxd100::Scraper
   end
   
   def list_index
-    self.list_page.css("li.poster-container.numbered-list-item")
+    list_page.css("li.poster-container.numbered-list-item")
+  end
+  
+  def create_list
+    list_index.each do |film|
+      Letterboxd100::Film.films_from_index(film)
+    end
   end
 end

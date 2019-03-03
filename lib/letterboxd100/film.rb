@@ -9,6 +9,14 @@ class Letterboxd100::Film
     @@all << self
   end
   
+  def self.films_from_index(film)
+    self.new(
+      film.css("div").css("img").attribute("alt").value,
+      film.css("p").text,
+      "https://letterboxd.com#{film.css("div").attribute("data-film-slug").value}"
+      )
+  end
+  
   def self.all
     @@all
   end
