@@ -28,4 +28,12 @@ class Letterboxd100::Film
   def director
     @director ||= film_page.css("span.prettify").text
   end
+  
+  def year
+    @year ||= film_page.css("small.number").css("a").text
+  end
+  
+  def length
+    @length ||= film_page.css("p.text-link.text-footer").text.gsub(/\s+/, "").chomp("MoredetailsatIMDbTMDbReportthisfilm").chop
+  end
 end
