@@ -1,5 +1,5 @@
 class Letterboxd100::Film
-  attr_accessor :title, :position, :url, :director, :year, :rating, :synopsis
+  attr_accessor :title, :position, :url, :director, :year, :rating, :synopsis, :film_page
   @@all = []
   
   def initialize(name = nil, position = nil, url = nil)
@@ -19,5 +19,13 @@ class Letterboxd100::Film
   
   def self.all
     @@all
+  end
+  
+  def film_page
+    @film_page ||= Nokogiri::HTML(open(self.url))
+  end
+  
+  def director
+    @director ||= film_page.css("span.prettify").text
   end
 end
