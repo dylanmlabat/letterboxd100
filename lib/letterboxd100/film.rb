@@ -1,9 +1,9 @@
 class Letterboxd100::Film
-  attr_accessor :title, :position, :url, :director, :year, :rating, :synopsis, :film_page
+  attr_accessor :title, :position, :url, :director, :year, :length, :rating, :synopsis, :film_page
   @@all = []
   
-  def initialize(name = nil, position = nil, url = nil)
-    @name = name
+  def initialize(title = nil, position = nil, url = nil)
+    @title = title
     @position = position
     @url = url
     @@all << self
@@ -35,5 +35,13 @@ class Letterboxd100::Film
   
   def length
     @length ||= film_page.css("p.text-link.text-footer").text.gsub(/\s+/, "").chomp("MoredetailsatIMDbTMDbReportthisfilm").chop
+  end
+  
+  def rating
+    @rating ||= film_page.css("meta")[17].attribute("content").value[0..3]
+  end
+  
+  def synopsis
+    @synopsis ||= film_page.css("div.truncate").css("p").text
   end
 end
