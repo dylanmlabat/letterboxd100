@@ -3,6 +3,7 @@ class Letterboxd100::CLI
   
   def call
     Letterboxd100::Scraper.new.create_list
+    binding.pry
     list_welcome
     start
   end

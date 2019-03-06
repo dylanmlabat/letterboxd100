@@ -26,7 +26,10 @@ class Letterboxd100::Film
   end
   
   def director
-    @director ||= film_page.css("span.prettify").text
+    director = film_page.css("span.prettify").collect do |name|
+      name.text
+    end
+    @director ||= director.join(", ")
   end
   
   def year
