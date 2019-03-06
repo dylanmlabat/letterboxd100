@@ -45,12 +45,25 @@ class Letterboxd100::CLI
     if input == "back"
       start
     elsif input.to_i >= 1 || input.to_i <= 100
-      film_data
+      film_data(input.to_i)
     end
   end
   
-  def film_data
-  
+  def film_data(input)
+    film = Letterboxd100::Film.all[input - 1]
+    
+    puts ""
+    puts "~~~~~~~~ #{film.title} ~~~~~~~~"
+    puts ""
+    puts "Directed by:        #{film.director}"
+    puts "Year of release:    #{film.year}"
+    puts "Length of film:     #{film.length}"
+    puts "Average rating:     #{film.rating} stars"
+    puts ""
+    puts "Synopsis:"
+    puts "#{film.synopsis}"
+    puts ""
+    puts "Read more at:     #{film.url}"
   end
   
   def quit
