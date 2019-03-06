@@ -40,7 +40,8 @@ class Letterboxd100::CLI
   
   def detail_inquiry
     puts ""
-    puts "Enter number to read more about the film, 'back' to view another group, or 'quit':"
+    puts "Enter number to read more about the film, 'back' to view another group, "
+    puts "or 'quit' to exit:"
     
     input = gets.strip
     
@@ -59,7 +60,8 @@ class Letterboxd100::CLI
   
   def detail_inquiry_2
     puts ""
-    puts "Enter number to see another film, 'list' to review options, 'back' to view another group, or 'quit':"
+    puts "Enter number to see another film, 'list' to review options, 'back' to view "
+    puts "another group, or 'quit':"
     
     input = gets.strip
   
