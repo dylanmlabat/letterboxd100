@@ -13,7 +13,7 @@ class Letterboxd100::CLI
   
   def start
     puts ""
-    puts "Enter the film rankings that you would like to view or 'quit' at any time:"
+    puts "Enter the film rankings that you would like to view or 'quit' to exit:"
     puts "1-10, 11-20, 21-30, 31-40, 41-50, 51-60, 61-70, 71-80, 81-90, 91-100"
   
     input = gets.strip
@@ -40,7 +40,7 @@ class Letterboxd100::CLI
   
   def detail_inquiry
     puts ""
-    puts "Enter a number to read more about the film or 'back' to view another group:"
+    puts "Enter number to read more about the film, 'back' to view another group, or 'quit':"
     
     input = gets.strip
     
@@ -50,9 +50,32 @@ class Letterboxd100::CLI
       quit
     elsif input.to_i >= @set_start && input.to_i <= (@set_start + 9)
       film_data(input.to_i)
+      detail_inquiry_2
     else
       entry_error
       detail_inquiry
+    end
+  end
+  
+  def detail_inquiry_2
+    puts ""
+    puts "Enter number to see another film, 'list' to review options, 'back' to view another group, or 'quit':"
+    
+    input = gets.strip
+  
+    if input == "back"
+      start
+    elsif input == "quit"
+      quit
+    elsif input == "list"
+      list_set(@set_start)
+      detail_inquiry
+    elsif input.to_i >= @set_start && input.to_i <= (@set_start + 9)
+      film_data(input.to_i)
+      detail_inquiry_2
+    else
+      entry_error
+      detail_inquiry_2
     end
   end
   
