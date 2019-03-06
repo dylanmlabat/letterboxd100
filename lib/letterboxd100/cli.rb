@@ -23,8 +23,7 @@ class Letterboxd100::CLI
     elsif input == "q"
       quit
     else
-      puts ""
-      puts "Invalid entry. Please try again."
+      entry_error
       start
     end
   end
@@ -44,8 +43,11 @@ class Letterboxd100::CLI
     
     if input == "back"
       start
-    elsif input.to_i >= 1 || input.to_i <= 100
+    elsif input.to_i >= 1 && input.to_i <= 100
       film_data(input.to_i)
+    else
+      entry_error
+      detail_inquiry
     end
   end
   
@@ -64,6 +66,11 @@ class Letterboxd100::CLI
     puts "#{film.synopsis}"
     puts ""
     puts "Read more at:     #{film.url}"
+  end
+  
+  def entry_error
+    puts ""
+    puts "Invalid entry. Please try again."
   end
   
   def quit
