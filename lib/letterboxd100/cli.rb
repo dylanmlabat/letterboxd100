@@ -11,14 +11,16 @@ class Letterboxd100::CLI
   end
   
   def start
-    puts "Enter the film rankings that you would like to view:"
+    puts "Enter the film rankings that you would like to view or 'q' to quit:"
     puts "1-10, 11-20, 21-30, 31-40, 41-50, 51-60, 61-70, 71-80, 81-90, 91-100"
   
-    input = gets.strip.to_i
+    input = gets.strip
     
-    if input == 1 || input == 11 || input == 21 || input == 31 || input == 41 || 
-      input == 51 || input == 61 || input == 71 || input == 81 || input == 91
+    if input == "1-10" || input == "11-20" || input == "21-30" || input == "31-40" || input == "41-50" || 
+      input == "51-60" || input == "61-70" || input == "71-80" || input == "81-90" || input == "91-100"
       list_set(input)
+    elsif input == "q"
+      quit
     else
       puts "Invalid entry. Please try again."
       start
@@ -26,8 +28,12 @@ class Letterboxd100::CLI
   end
   
   def list_set(input)
-    Letterboxd100::Film.all[input - 1, 10].each do |film|
+    Letterboxd100::Film.all[input.to_i - 1, 10].each do |film|
       puts "#{film.position}. #{film.title}"
     end
+  end
+  
+  def quit
+    puts "Have a nice day!"
   end
 end
