@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run `bin/letterboxd100` and follow the on screen prompts.
 
 ## Development
 
