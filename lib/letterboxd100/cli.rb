@@ -31,13 +31,6 @@ class Letterboxd100::CLI
     end
   end
   
-  def list_set(input)
-    puts ""
-    Letterboxd100::Film.all[input.to_i - 1, 10].each do |film|
-      puts "#{film.position}. #{film.title}"
-    end
-  end
-  
   def detail_inquiry
     puts ""
     puts "Enter number to read more about the film, 'back' to view another group, "
@@ -78,6 +71,13 @@ class Letterboxd100::CLI
     else
       entry_error
       detail_inquiry_2
+    end
+  end
+  
+  def list_set(input)
+    puts ""
+    Letterboxd100::Film.all[input.to_i - 1, 10].each do |film|
+      puts "#{film.position}. #{film.title}"
     end
   end
   
