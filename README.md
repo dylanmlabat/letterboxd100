@@ -1,6 +1,6 @@
 # Letterboxd100
 
-This gem pulls the top 100 films of Letterboxd.com by average user rating, and allows users to view that list in sets of 10. Users are able to select films within those sets in order to see additional data about the selected film (director, year of release, a brief synopsis of the film, and user rating).
+This CLI gem pulls the top 100 films of Letterboxd.com by average user rating, and allows users to view that list in sets of 10. Users are able to select films within those sets in order to see additional data about the selected film (director, year of release, length, user rating, and a brief synopsis of the film).
 
 ## Installation
 
